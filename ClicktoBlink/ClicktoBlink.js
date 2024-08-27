@@ -13,7 +13,7 @@ function setup() {
     button = createButton('update port');
     button.mousePressed(updatePort);
 
-    serial = new p5.SerialPort();
+    serial = new p5.SerialPort("192.168.1.19",8081);
 
     console.log('p5.serialport.js ' + serial.version);
 
