@@ -1,6 +1,6 @@
 // Serial write example
 const exampleName = '08-writeExample';
-let yellow, black, serial, serialPortName = 'COM7';
+let yellow, black, serial, serialPortName = 'dev/ttyUSB2';
 let htmlInputPortName, button, outMessage = 100;
 
 function setup() {
@@ -13,7 +13,7 @@ function setup() {
     button = createButton('update port');
     button.mousePressed(updatePort);
 
-    serial = new p5.SerialPort("192.168.158.68",443);
+    serial = new p5.SerialPort("192.168.158.68",8081);
 
     console.log('p5.serialport.js ' + serial.version);
 
