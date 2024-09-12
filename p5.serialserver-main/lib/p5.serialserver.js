@@ -70,14 +70,15 @@
       this.serverport = 8081;
     }
 
-    try {
-      this.socket = new WebSocket("ws://" + this.hostname + ":" + this.serverport);
-      console.log(("ws://" + this.hostname + ":" + this.serverport));
-    } catch (err) {
-      if (typeof self.errorCallback !== "undefined") {
-        self.errorCallback("Couldn't connect to the server, is it running?");
-      }
-    }
+try {
+  this.socket = new WebSocket("wss://" + this.hostname + ":" + this.serverport);
+  console.log(("wss://" + this.hostname + ":" + this.serverport));
+} catch (err) {
+  if (typeof self.errorCallback !== "undefined") {
+    self.errorCallback("Couldn't connect to the server, is it running?");
+  }
+}
+
 
     this.socket.onopen = function(event) {
       console.log('opened socket');
